@@ -7,7 +7,7 @@ from django.urls import reverse, reverse_lazy
 class ListListView(ListView):
     model = ToDoList
     template_name = "todo_app/index.html"
-# Create your views here.
+
 class ItemListView(ListView):
     model = ToDoItem
     template_name = "todo_app/todo_list.html"
@@ -75,8 +75,7 @@ class ItemUpdate(UpdateView):
 
 class ListDelete(DeleteView):
     model = ToDoList
-    # You have to use reverse_lazy() instead of reverse(),
-    # as the urls are not loaded when the file is imported.
+  
     success_url = reverse_lazy("index")
 
 class ItemDelete(DeleteView):
